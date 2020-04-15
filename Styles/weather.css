@@ -1,0 +1,257 @@
+body {
+  background: #e99c57;
+  margin: 0;
+  padding: 0;
+}
+
+.SpaceX {
+	color: white;
+	font-family: tahoma;
+	text-shadow: 0px 0 #ca6624, 0 2px #ca6624, 0px 0 #ca6624, 0 0px #ca6624;
+	top: 20px;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	width: 130px;
+	height: 100px;
+}
+
+#map {
+  float: right;
+  height: 100vh;
+  width: 60%
+}
+
+#mapbox {
+    width:100%;
+    height:100%;
+    border:0px solid transparent;
+}
+
+#searchMap {
+    z-index: 10000 !important;
+    position: relative;
+    float: right;
+    text-overflow: ellipsis;
+    padding: 2px 0px 2px 6px;
+    background-color: #fff;
+    color: gray;
+    font-size: 12pt;
+    font-family: Trebuchet MS;
+    height:24px;
+    width:200px;
+    border: 0px solid transparent;
+    border-radius: 4px 4px 4px 4px;
+    margin:0px 120px 10px 10px;
+}
+
+.mapbox_header {
+    color: white;
+    text-align: right;
+    font-size: 10pt;
+    font-family: Trebuchet MS;
+    font-style: italic;
+    font-weight: 100;
+    margin:10px 120px 10px 0;
+}    
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 15px 15px;
+}
+
+header input {
+  width: 100%;
+  max-width: 280px;
+  padding: 10px 15px;
+  border: none;
+  outline: none;
+  background-color: rgba(275, 295, 255, 0.7);
+  border-radius: 10px 10px 10px 10px;
+  border-bottom: 3px solid #ca6624;
+  
+  color: #313131;
+  font-size: 20px;
+  font-weight: 300;
+  transition: 0.2s ease-out;
+}
+
+header input:focus {
+  background-color: rgba(275, 255, 255, 0.3);
+}
+
+main {
+  flex: 1 1 100%;
+  padding: 25px 25px 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.location .city {
+  color: #FFF;
+  font-family: Helvetica;
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.location .date {
+  color: #FFF;
+  font-size: 16px;
+}
+
+.current .temp {
+	font-family: tahoma;
+  color: #FFF;
+  font-size: 102px;
+  font-weight: 900;
+  margin: 30px 0px;
+  text-shadow: 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+.current .temp span {
+	
+  font-weight: 500;
+}
+
+.current .weather {
+  color: #FFF;
+  font-size: 32px;
+  font-weight: 700;
+  font-style: italic;
+  margin-bottom: 15px;
+  text-shadow: 0px 2px rgba(0, 0, 0, 0.4);
+}
+
+.current .hi-low {
+  color: #FFF;
+  font-size: 24px;
+  font-weight: 500;
+  text-shadow: 0px 2px rgba(0, 0, 0, 0.4);
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1300px;
+  max-height: 700px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.slideFoto {
+  width: 100%;
+  height: 700px;
+  text-align: center;
+  align-items: center;
+  background-color: rgba(275, 295, 255, 0.7);
+  border-radius: 5px 5px 5px 5px;
+  border: 3px solid #ca6624;
+	
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+.slideshow-container, .slideshow-container2 {
+	top: 20px;
+}
+
+/* Responsiveness */ 
+
+	@media screen and (max-width: 420px) {
+	.totaal {
+	 display: flex;
+	 flex-direction: column;
+	}
+	
+	.slideFoto {
+	width: 100%;
+	height: 300px;	
+	}
+	
+	#map {
+    height: 90vh;
+    width: 100%
+	}
+	
+	}
+	
+
+	
+	@media screen and (max-width: 768px) and (min-width: 421px) {
+
+	} 
+	
+	@media screen and (min-width: 769px) {
+		
+	}
+

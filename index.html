@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Challenge3</title>
+<script src="https://api.mapbox.com/mapbox-gl-js/v1.9.0/mapbox-gl.js"></script>
+<script src="Scripts/weather.js" defer></script>
+<link href="https://api.mapbox.com/mapbox-gl-js/v1.9.0/mapbox-gl.css" rel="stylesheet" />
+<link href="Styles/weather.css" rel="stylesheet" />
+
+ <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.min.js"></script>
+    <link
+    rel="stylesheet"
+    href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.css"
+    type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
+</head>
+<body> 
+ <div class="totaal">
+ 
+ <h1 class="SpaceX"> SpaceX </h1>
+
+<div class="app-wrap">
+    <header>
+      <input type="text" autocomplete="off" class="search-box" placeholder="zoek een stad..." />
+    </header>
+    <main>
+      <section class="location">
+        <div class="city">Upington, ZA</div>
+        <div class="date">Donderdag 16 april 2020</div>
+      </section>
+      <div class="current">
+        <div class="temp">24<span>°c</span></div>
+        <div class="weather">zonnig</div>
+        <div class="hi-low">22°c / 26°c</div>
+      </div>
+    </main>
+  </div>
+  
+  <div id="map"></div> 
+<div>
+  <div id='mapbox' style="height:20px;"></div>
+</div>
+  
+  <!-- Slideshow container -->
+<div class="slideshow-container">
+
+  <!-- Full-width images with number and caption text -->
+  <div class="mySlides fade">
+   
+    <img class="slideFoto" src="afbeeldingen/savanne.jpg">
+    <div class="text">Woestijn, Upington (Zuid Afrika)</div>
+  </div>
+
+  <div class="mySlides fade">
+    
+    <img class="slideFoto" src="afbeeldingen/savanne2.jpg">
+    <div class="text">Savannegebied, Upington (Zuid-Afrika)</div>
+  </div>
+
+  <div class="mySlides fade">
+    
+    <img class="slideFoto" src="afbeeldingen/steppe.jpg">
+    <div class="text">Steppegebied, Upington (Zuid-Afrika)</div>
+  </div>
+	</div>
+	</div>
+  
+</body>
+</html>
