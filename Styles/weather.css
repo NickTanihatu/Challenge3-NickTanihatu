@@ -163,8 +163,6 @@ main {
 	display: none;
 }
 
-
-
 .text {
 	color: #f2f2f2;
 	font-size: 15px;
@@ -244,29 +242,8 @@ main {
 }
 	
 @media screen and (max-width: 768px) and (min-width: 421px) {
-.totaal {
-	display: flex;
-	flex-direction: column;
-}
-	
 .slideFoto {
-	width: 100%;
 	height: 400px;	
-}
-	
-#map {
-    height: 60vh;
-    width: 100%;
-	border-radius: 5px 5px 5px 5px;
-}
-	
-.text {
-	color: #f2f2f2;
-	font-size: 15px;
-	padding: 8px 12px;
-	position: absolute;
-	bottom: 8px;
-	width: 100%;
 }
 } 
 @media screen and (min-width: 769px) {
