@@ -225,8 +225,10 @@ main {
 	height: 300px;	
 }
 	
-.text {
-	bottom: 8px;
+#map {
+    height: 60vh;
+    width: 100%;
+	border-radius: 5px 5px 5px 5px;
 }
 }
 	
