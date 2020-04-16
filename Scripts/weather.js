@@ -184,53 +184,52 @@ searchbox.addEventListener('keypress', setQuery);
 
 // Resultaat opvragen van de stadnaam in de zoekfunctie
 function setQuery(evt) {
-  if (evt.keyCode == 13) {
-    getResults(searchbox.value);
-  }
+	if (evt.keyCode == 13) {
+	getResults(searchbox.value);
+	}
 }
 
 // Resultaat van het weer opvragen met fetch (manipuleren van het systeem)
 function getResults (query) {
-  fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
+	fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
     .then(weather => {
-      return weather.json();
+    return weather.json();
     }).then(displayResults);
 }
 
 // Functie dat gegevens opvraagt van de gevraagde locatie
 function displayResults (weather) {
-  let city = document.querySelector('.location .city');
-  city.innerText = `${weather.name}, ${weather.sys.country}`;
+	let city = document.querySelector('.location .city');
+	city.innerText = `${weather.name}, ${weather.sys.country}`;
 
 // Datum
-  let now = new Date();
-  let date = document.querySelector('.location .date');
-  date.innerText = dateBuilder(now);
+	let now = new Date();
+	let date = document.querySelector('.location .date');
+	date.innerText = dateBuilder(now);
 
 // Temperatuur in celsius
-  let temp = document.querySelector('.current .temp');
-  temp.innerHTML = `${Math.round(weather.main.temp)}<span>°c</span>`;
+	let temp = document.querySelector('.current .temp');
+	temp.innerHTML = `${Math.round(weather.main.temp)}<span>°c</span>`;
 
 // Eigenschap van het weer
-  let weather_el = document.querySelector('.current .weather');
-  weather_el.innerText = weather.weather[0].main;
+	let weather_el = document.querySelector('.current .weather');
+	weather_el.innerText = weather.weather[0].main;
 
 // Marges van temperatuur
-  let hilow = document.querySelector('.hi-low');
-  hilow.innerText = `${Math.round(weather.main.temp_min)}°c / ${Math.round(weather.main.temp_max)}°c`;
+	let hilow = document.querySelector('.hi-low');
+	hilow.innerText = `${Math.round(weather.main.temp_min)}°c / ${Math.round(weather.main.temp_max)}°c`;
 }
 
 // Functie dat de huidige datum plaatst
 function dateBuilder (d) {
-  let months = ["Januari", "Februari", "Maart", "April", "Mei", "Juni", "Juli", "Augustus", "September", "Oktober", "November", "December"];
-  let days = ["Zondag", "Maandag", "Dinsdag", "Woensdag", "Donderdag", "Vrijdag", "Zaterdag"];
+	let months = ["Januari", "Februari", "Maart", "April", "Mei", "Juni", "Juli", "Augustus", "September", "Oktober", "November", "December"];
+	let days = ["Zondag", "Maandag", "Dinsdag", "Woensdag", "Donderdag", "Vrijdag", "Zaterdag"];
 
-  let day = days[d.getDay()];
-  let date = d.getDate();
-  let month = months[d.getMonth()];
-  let year = d.getFullYear();
-
-  return `${day} ${date} ${month} ${year}`;
+	let day = days[d.getDay()];
+	let date = d.getDate();
+	let month = months[d.getMonth()];
+	let year = d.getFullYear();
+	return `${day} ${date} ${month} ${year}`;
 }
 
 var slideIndex = 0;
@@ -238,14 +237,14 @@ showSlides();
 
 // Functie dat ervoor zorgt dat elke 2 seconde de afbeelding veranderd
 function showSlides() {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  for (i = 0; i < slides.length; i++) {
+	var i;
+	var slides = document.getElementsByClassName("mySlides");
+	for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
-  }
+}
   
  // Na 2 seconde gaat de index naar de volgende -> overige worden gedisplay blocked
-  slideIndex++;
+slideIndex++;
   if (slideIndex > slides.length) {slideIndex = 1}
   slides[slideIndex-1].style.display = "block";
   setTimeout(showSlides, 2000);

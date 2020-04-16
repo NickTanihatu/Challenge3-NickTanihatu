@@ -1,7 +1,13 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
 body {
-  background: #e99c57;
-  margin: 0;
-  padding: 0;
+	background: #e99c57;
+	margin: 0;
+	padding: 0;
 }
 
 .SpaceX {
@@ -20,24 +26,24 @@ body {
 }
 
 #map {
-  float: right;
-  height: 100vh;
-  width: 60%;
-  border-radius: 5px 5px 5px 5px;
+	float: right;
+	height: 100vh;
+	width: 60%;
+	border-radius: 5px 5px 5px 5px;
 }
 
 .app-wrap {
-  align-items: center;
-  text-align: center;
-  display: flex;
-  flex: 1;
-  flex-direction: column;
+	align-items: center;
+	text-align: center;
+	display: flex;
+	flex: 1;
+	flex-direction: column;
 }
 
 .totaal {
-	 display: flex;
-	 flex-direction: row;
-	}
+	display: flex;
+	flex-direction: row;
+}
 
 #searchMap {
     z-index: 10000 !important;
@@ -66,151 +72,142 @@ body {
     margin:10px 120px 10px 0;
 }    
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-
 header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 50px 15px 15px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 50px 15px 15px;
 }
 
 /*/ de input gegeven van de header opmaken /*/ 
 header input {
-  width: 100%;
-  max-width: 280px;
-  padding: 10px 15px;
-  border: none;
-  outline: none;
-  background-color: rgba(275, 295, 255, 0.7);
-  border-radius: 10px 10px 10px 10px;
-  border-bottom: 3px solid #ca6624;
-  
-  color: #313131;
-  font-size: 20px;
-  font-weight: 300;
-  transition: 0.2s ease-out;
+	width: 100%;
+	max-width: 280px;
+	padding: 10px 15px;
+	border: none;
+	outline: none;
+	background-color: rgba(275, 295, 255, 0.7);
+	border-radius: 10px 10px 10px 10px;
+	border-bottom: 3px solid #ca6624; 
+	color: #313131;
+	font-size: 20px;
+	font-weight: 300;
+	transition: 0.2s ease-out;
 }
 
 /*/ de input gegeven van de header opmaken wanneer je erop klikt / op gefocust bent /*/
 header input:focus {
-  background-color: rgba(275, 255, 255, 0.3);
+	background-color: rgba(275, 255, 255, 0.3);
 }
 
 main {
-  flex: 1 1 100%;
-  padding: 25px 25px 50px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+	flex: 1 1 100%;
+	padding: 25px 25px 50px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
 }
 
 .location .city {
-  color: #FFF;
-  font-family: Helvetica;
-  font-size: 32px;
-  font-weight: 500;
-  margin-bottom: 5px;
+	color: #FFF;
+	font-family: Helvetica;
+	font-size: 32px;
+	font-weight: 500;
+	margin-bottom: 5px;
 }
 
 .location .date {
-  color: #FFF;
-  font-size: 16px;
+	color: #FFF;
+	font-size: 16px;
 }
 
 .current .temp {
 	font-family: tahoma;
-  color: #FFF;
-  font-size: 102px;
-  font-weight: 900;
-  margin: 30px 0px;
-  text-shadow: 2px 5px rgba(0, 0, 0, 0.6);
+	color: #FFF;
+	font-size: 102px;
+	font-weight: 900;
+	margin: 30px 0px;
+	text-shadow: 2px 5px rgba(0, 0, 0, 0.6);
 }
 
 .current .temp span {
-	
-  font-weight: 500;
+	font-weight: 500;
 }
 
 .current .weather {
-  color: #FFF;
-  font-size: 32px;
-  font-weight: 700;
-  font-style: italic;
-  margin-bottom: 15px;
-  text-shadow: 0px 2px rgba(0, 0, 0, 0.4);
+	color: #FFF;
+	font-size: 32px;
+	font-weight: 700;
+	font-style: italic;
+	margin-bottom: 15px;
+	text-shadow: 0px 2px rgba(0, 0, 0, 0.4);
 }
 
 .current .hi-low {
-  color: #FFF;
-  font-size: 24px;
-  font-weight: 500;
-  text-shadow: 0px 2px rgba(0, 0, 0, 0.4);
+	color: #FFF;
+	font-size: 24px;
+	font-weight: 500;
+	text-shadow: 0px 2px rgba(0, 0, 0, 0.4);
 }
 
 .slideshow-container {
-  max-width: 1300px;
-  max-height: 700px;
-  position: relative;
-  margin: auto;
+	max-width: 1300px;
+	max-height: 700px;
+	position: relative;
+	margin: auto;
 }
 
 /* De afbeeldingen (standaard) verbergen */
 .mySlides {
-  display: none;
+	display: none;
 }
 
 
 
 .text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  width: 100%;
-  text-align: center;
-  font-family: tahoma;
-  margin-bottom: 20px;
+	color: #f2f2f2;
+	font-size: 15px;
+	padding: 8px 12px;
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	font-family: tahoma;
+	margin-bottom: 20px;
 }
 
 /* Opmaak afbeeldingen */
 .slideFoto {
-  width: 100%;
-  height: 700px;
-  text-align: center;
-  align-items: center;
-  background-color: rgba(275, 295, 255, 0.7);
-  border-radius: 5px 5px 5px 5px;
+	width: 100%;
+	height: 700px;
+	text-align: center;
+	align-items: center;
+	background-color: rgba(275, 295, 255, 0.7);
+	border-radius: 5px 5px 5px 5px;
 	
 }
 
 .active, .dot:hover {
-  background-color: #717171;
+	background-color: #717171;
 }
 
 /* De overgang van de afbeeldingen animeren */
 .fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
+	-webkit-animation-name: fade;
+	-webkit-animation-duration: 1.5s;
+	animation-name: fade;
+	animation-duration: 1.5s;
 }
 
 /* Helderheid animeren van overgang */
 @-webkit-keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+	from {opacity: .4}
+	to {opacity: 1}
 }
 
 @keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+	from {opacity: .4}
+	to {opacity: 1}
 }
 
 .slideshow-container, .slideshow-container2 {
@@ -219,63 +216,60 @@ main {
 
 /* Responsiveness */ 
 
-	@media screen and (max-width: 420px) {
-	.totaal {
-	 display: flex;
-	 flex-direction: column;
-	}
+@media screen and (max-width: 420px) {
+.totaal {
+	display: flex;
+	flex-direction: column;
+}
 	
-	.slideFoto {
+.slideFoto {
 	width: 100%;
 	height: 300px;	
-	}
+}
 	
-	#map {
+#map {
     height: 60vh;
     width: 100%;
 	border-radius: 5px 5px 5px 5px;
-	}
+}
 	
-	.text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-	}
-	}
+.text {
+	color: #f2f2f2;
+	font-size: 15px;
+	padding: 8px 12px;
+	position: absolute;
+	bottom: 8px;
+	width: 100%;
+}
+}
 	
-
+@media screen and (max-width: 768px) and (min-width: 421px) {
+.totaal {
+	display: flex;
+	flex-direction: column;
+}
 	
-	@media screen and (max-width: 768px) and (min-width: 421px) {
-	.totaal {
-	 display: flex;
-	 flex-direction: column;
-	}
-	
-	.slideFoto {
+.slideFoto {
 	width: 100%;
 	height: 400px;	
-	}
+}
 	
-	#map {
+#map {
     height: 60vh;
     width: 100%;
 	border-radius: 5px 5px 5px 5px;
-	}
+}
 	
-	.text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-	}
-	} 
-	
-	@media screen and (min-width: 769px) {
+.text {
+	color: #f2f2f2;
+	font-size: 15px;
+	padding: 8px 12px;
+	position: absolute;
+	bottom: 8px;
+	width: 100%;
+}
+} 
+@media screen and (min-width: 769px) {
 		
-	}
+}
 
