@@ -1,5 +1,5 @@
 # Challenge3-NickTanihatu
-hallenge 3 van XT2
+Challenge 3 van XT2
  
 Challenge 3 gaat over het maken van een dashboard met gegevens die relevant zijn voor de terugreis / terugkomst - https://nicktanihatu.github.io/Challenge3-NickTanihatu/
 
