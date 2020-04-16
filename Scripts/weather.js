@@ -1,4 +1,7 @@
+// Api token zetten
 mapboxgl.accessToken = 'pk.eyJ1Ijoibmlja3RhbmloYXR1IiwiYSI6ImNrOGs1NXM3NDAxeXozbm5rY2hnbDhrNTEifQ.xoKLjZVxmLUYA4pnfsQICw';
+
+// De kaart implementeren incl. beginpunt met zoom
 var map = new mapboxgl.Map({
 container: 'map',
 style: 'mapbox://styles/mapbox/streets-v11',
@@ -6,6 +9,7 @@ center: [21.242447, -28.453630],
 zoom: 14
 });
  
+// De kaart opmaken 
 map.on('load', function() {
 map.addSource('places', {
 'type': 'geojson',
@@ -123,7 +127,7 @@ map.addSource('places', {
 ]
 }
 });
-// Add a layer showing the places.
+// Een laag toevoegen met de plaatsen
 map.addLayer({
 'id': 'places',
 'type': 'symbol',
@@ -134,15 +138,11 @@ map.addLayer({
 }
 });
  
-// When a click event occurs on a feature in the places layer, open a popup at the
-// location of the feature, with description HTML from its properties.
 map.on('click', 'places', function(e) {
 var coordinates = e.features[0].geometry.coordinates.slice();
 var description = e.features[0].properties.description;
  
-// Ensure that if the map is zoomed out such that multiple
-// copies of the feature are visible, the popup appears
-// over the copy being pointed to.
+// Kaart zodanig uitzoomen dat meerdere eigenschappen te zien zijn
 while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
 coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
 }
@@ -153,17 +153,18 @@ new mapboxgl.Popup()
 .addTo(map);
 });
  
-// Change the cursor to a pointer when the mouse is over the places layer.
+// Wanneer je op de kaart bent, de cursor veranderen in een hand icoontje
 map.on('mouseenter', 'places', function() {
 map.getCanvas().style.cursor = 'pointer';
 });
  
-// Change it back to a pointer when it leaves.
+// Het hand icoontje terug veranderen in de cursor, wanneer je de kaart verlaat
 map.on('mouseleave', 'places', function() {
 map.getCanvas().style.cursor = '';
 });
 });
 
+// Zoekfunctie kaart
 map.addControl(
   new MapboxGeocoder({
     accessToken: mapboxgl.accessToken,
@@ -171,23 +172,24 @@ map.addControl(
   })
 );
 
-
+// De constante genaamd api de apikey en afkomst als waarden geven
 const api = {
   key: "379797c7595b3c8aa42f614b8c99aee4",
   base: "https://api.openweathermap.org/data/2.5/"
 }
 
+// De constante genaamd searchbox linken met de html class .search-box
 const searchbox = document.querySelector('.search-box');
 searchbox.addEventListener('keypress', setQuery);
 
-
+// Resultaat opvragen van de stadnaam in de zoekfunctie
 function setQuery(evt) {
   if (evt.keyCode == 13) {
     getResults(searchbox.value);
   }
 }
 
-
+// Resultaat van het weer opvragen met fetch (manipuleren van het systeem)
 function getResults (query) {
   fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
     .then(weather => {
@@ -195,24 +197,30 @@ function getResults (query) {
     }).then(displayResults);
 }
 
+// Functie dat gegevens opvraagt van de gevraagde locatie
 function displayResults (weather) {
   let city = document.querySelector('.location .city');
   city.innerText = `${weather.name}, ${weather.sys.country}`;
 
+// Datum
   let now = new Date();
   let date = document.querySelector('.location .date');
   date.innerText = dateBuilder(now);
 
+// Temperatuur in celsius
   let temp = document.querySelector('.current .temp');
   temp.innerHTML = `${Math.round(weather.main.temp)}<span>°c</span>`;
 
+// Eigenschap van het weer
   let weather_el = document.querySelector('.current .weather');
   weather_el.innerText = weather.weather[0].main;
 
+// Marges van temperatuur
   let hilow = document.querySelector('.hi-low');
   hilow.innerText = `${Math.round(weather.main.temp_min)}°c / ${Math.round(weather.main.temp_max)}°c`;
 }
 
+// Functie dat de huidige datum plaatst
 function dateBuilder (d) {
   let months = ["Januari", "Februari", "Maart", "April", "Mei", "Juni", "Juli", "Augustus", "September", "Oktober", "November", "December"];
   let days = ["Zondag", "Maandag", "Dinsdag", "Woensdag", "Donderdag", "Vrijdag", "Zaterdag"];
@@ -228,14 +236,17 @@ function dateBuilder (d) {
 var slideIndex = 0;
 showSlides();
 
+// Functie dat ervoor zorgt dat elke 2 seconde de afbeelding veranderd
 function showSlides() {
   var i;
   var slides = document.getElementsByClassName("mySlides");
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
+  
+ // Na 2 seconde gaat de index naar de volgende -> overige worden gedisplay blocked
   slideIndex++;
   if (slideIndex > slides.length) {slideIndex = 1}
   slides[slideIndex-1].style.display = "block";
-  setTimeout(showSlides, 2000); // Change image every 2 seconds
+  setTimeout(showSlides, 2000);
 }
